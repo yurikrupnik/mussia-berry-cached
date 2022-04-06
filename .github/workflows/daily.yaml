@@ -121,4 +121,5 @@ jobs:
       #      - run: |-
       #          gcloud --quiet auth configure-docker
       - name: Start Nx Agent ${{ matrix.agent }}
-        run: npx nx-cloud start-agent
+        run: which nx
+#        run: npx nx-cloud start-agent
