@@ -90,6 +90,9 @@ jobs:
         agent: [1, 2, 3]
     steps:
       - uses: actions/checkout@v2
+        name: Checkout [main]
+        with:
+          fetch-depth: 0
       - uses: actions/setup-node@v2
         with:
           node-version: '16'
