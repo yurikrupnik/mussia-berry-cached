@@ -30,7 +30,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/core@npm:^7.1.0, @babel/core@npm:^7.12.3, @babel/core@npm:^7.15.0, @babel/core@npm:^7.15.5, @babel/core@npm:^7.7.2, @babel/core@npm:^7.7.5, @babel/core@npm:^7.8.0":
+"@babel/core@npm:^7.1.0, @babel/core@npm:^7.12.3, @babel/core@npm:^7.15.0, @babel/core@npm:^7.15.5, @babel/core@npm:^7.17.9, @babel/core@npm:^7.7.2, @babel/core@npm:^7.7.5, @babel/core@npm:^7.8.0":
   version: 7.17.9
   resolution: "@babel/core@npm:7.17.9"
   dependencies:
@@ -2066,7 +2066,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nrwl/tao@npm:13.9.7":
+"@nrwl/tao@npm:13.9.7, @nrwl/tao@npm:^13.9.7":
   version: 13.9.7
   resolution: "@nrwl/tao@npm:13.9.7"
   dependencies:
@@ -5632,6 +5632,13 @@ __metadata:
     domelementtype: ^2.2.0
     domhandler: ^4.2.0
   checksum: abf7434315283e9aadc2a24bac0e00eab07ae4313b40cc239f89d84d7315ebdfd2fb1b5bf750a96bc1b4403d7237c7b2ebf60459be394d625ead4ca89b934391
+  languageName: node
+  linkType: hard
+
+"dotenv@npm:^16.0.0":
+  version: 16.0.0
+  resolution: "dotenv@npm:16.0.0"
+  checksum: 664cebb51f0a9a1d1b930f51f0271e72e26d62feaecc9dc03df39453dd494b4e724809ca480fb3ec3213382b1ed3f791aaeb83569a137f9329ce58efd4853dbf
   languageName: node
   linkType: hard
 
@@ -9365,6 +9372,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "mussia-berry-cached@workspace:."
   dependencies:
+    "@babel/core": ^7.17.9
     "@nrwl/cli": 13.9.7
     "@nrwl/cypress": 13.9.7
     "@nrwl/eslint-plugin-nx": 13.9.7
@@ -9372,6 +9380,7 @@ __metadata:
     "@nrwl/linter": 13.9.7
     "@nrwl/nx-cloud": latest
     "@nrwl/react": 13.9.7
+    "@nrwl/tao": ^13.9.7
     "@nrwl/web": 13.9.7
     "@nrwl/workspace": 13.9.7
     "@testing-library/react": 12.1.4
@@ -9385,6 +9394,7 @@ __metadata:
     babel-jest: 27.2.3
     core-js: ^3.6.5
     cypress: ^9.1.0
+    dotenv: ^16.0.0
     eslint: ~8.7.0
     eslint-config-prettier: 8.1.0
     eslint-plugin-cypress: ^2.10.3
@@ -9399,6 +9409,7 @@ __metadata:
     react-dom: 17.0.2
     react-test-renderer: 17.0.2
     regenerator-runtime: 0.13.7
+    rxjs: ^7.5.5
     ts-jest: 27.0.5
     tslib: ^2.0.0
     typescript: ~4.5.2
@@ -11268,7 +11279,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"rxjs@npm:^7.5.1":
+"rxjs@npm:^7.5.1, rxjs@npm:^7.5.5":
   version: 7.5.5
   resolution: "rxjs@npm:7.5.5"
   dependencies:
