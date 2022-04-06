@@ -77,7 +77,7 @@ jobs:
       - run: yarn lint -- --skip-nx-cache --verbose
       #      - run: yarn e2e -- --skip-nx-cache --verbose
       - name: Stop agents
-        run: yarn dls nx-cloud stop-all-agents
+        run: yarn dlx nx-cloud stop-all-agents
         if: ${{ always() }}
 
   agents:
