@@ -54,7 +54,7 @@ jobs:
 #        with:
 #          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
 #          key: ${{ runner.os }}-yarn-${{ matrix.node-version }}-${{ hashFiles('**/yarn.lock') }}
-#      - run: yarn -v
+      - run: yarn -v
 #      - run: yarn install
 
       #      - name: Cache pnpm modules
