@@ -70,13 +70,13 @@ jobs:
       #          run_install: true
       #      - run: git config --global user.email krupnik.yuri@gmail.com && git config --global user.name yurikrupnik
       #      - run: echo //registry.npmjs.org/:_authToken=${NPM_TOKEN} > .npmrc
-      - run: yarn add dotenv
-      - run: which nx
-      - run: npx nx-cloud start-ci-run
-      - run: yarn test -- --skip-nx-cache --verbose
-      - run: yarn build -- --skip-nx-cache --verbose
-      - run: yarn lint -- --skip-nx-cache --verbose
-      #      - run: yarn e2e -- --skip-nx-cache --verbose
+#      - run: yarn add dotenv
+#      - run: which nx
+#      - run: npx nx-cloud start-ci-run
+#      - run: yarn test -- --skip-nx-cache --verbose
+#      - run: yarn build -- --skip-nx-cache --verbose
+#      - run: yarn lint -- --skip-nx-cache --verbose
+#      #      - run: yarn e2e -- --skip-nx-cache --verbose
       - name: Stop agents
         run: npx nx-cloud stop-all-agents
         if: ${{ always() }}
@@ -124,6 +124,6 @@ jobs:
       #          service_account_key: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
       #      - run: |-
       #          gcloud --quiet auth configure-docker
-      - name: Start Nx Agent ${{ matrix.agent }}
+#      - name: Start Nx Agent ${{ matrix.agent }}
 #        run: which nx
 #        run: npx nx-cloud start-agent
