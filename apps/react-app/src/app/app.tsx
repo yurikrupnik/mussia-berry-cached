@@ -7,6 +7,7 @@ export function App() {
     <>
       <NxWelcome title="react-app" />
       <div />
+      <div>h</div>
     </>
   );
 }
