@@ -73,9 +73,9 @@ jobs:
 #      - run: yarn add dotenv
 #      - run: which nx
       - run: yarn nx-cloud start-ci-run
-      - run: yarn test -- --skip-nx-cache --verbose
-      - run: yarn build -- --skip-nx-cache --verbose
-      - run: yarn lint --skipNxCache --verbose
+      - run: yarn test
+      - run: yarn build
+      - run: yarn lint
 #      #      - run: yarn e2e -- --skip-nx-cache --verbose
       - name: Stop agents
         run: yarn nx-cloud stop-all-agents
