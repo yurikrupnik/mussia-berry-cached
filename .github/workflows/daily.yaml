@@ -96,6 +96,7 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: '16'
+      - run: yarn -v
 #      - name: Get Yarn cache directory
 #        id: yarn-cache-dir-path
 #        run: echo "::set-output name=dir::$(yarn config get cacheFolder)" # v1 yarn cache dir
@@ -124,5 +125,5 @@ jobs:
       #      - run: |-
       #          gcloud --quiet auth configure-docker
       - name: Start Nx Agent ${{ matrix.agent }}
-        run: which nx
+#        run: which nx
 #        run: npx nx-cloud start-agent
