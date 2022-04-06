@@ -40,6 +40,7 @@ Thumbs.db
 
 .yarn/*
 !.yarn/cache
+!.yarn/unplugged
 !.yarn/patches
 !.yarn/plugins
 !.yarn/releases
