@@ -70,7 +70,8 @@ jobs:
       #          run_install: true
       #      - run: git config --global user.email krupnik.yuri@gmail.com && git config --global user.name yurikrupnik
       #      - run: echo //registry.npmjs.org/:_authToken=${NPM_TOKEN} > .npmrc
-      - run: npm i -g dotenv
+      - run: yarn add dotenv
+      - run: which nx
       - run: npx nx-cloud start-ci-run
       - run: yarn test -- --skip-nx-cache --verbose
       - run: yarn build -- --skip-nx-cache --verbose
