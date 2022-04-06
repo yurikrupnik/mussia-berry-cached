@@ -71,7 +71,7 @@ jobs:
       #      - run: git config --global user.email krupnik.yuri@gmail.com && git config --global user.name yurikrupnik
       #      - run: echo //registry.npmjs.org/:_authToken=${NPM_TOKEN} > .npmrc
       #      - run: npm i -g dotenv
-      - run: yarn nx-cloud start-ci-run
+      - run: npx nx-cloud start-ci-run
       - run: yarn test -- --skip-nx-cache --verbose
       - run: yarn build -- --skip-nx-cache --verbose
       - run: yarn lint -- --skip-nx-cache --verbose
@@ -120,4 +120,4 @@ jobs:
       #      - run: |-
       #          gcloud --quiet auth configure-docker
       - name: Start Nx Agent ${{ matrix.agent }}
-        run: yarn nx-cloud start-agent
+        run: npx nx-cloud start-agent
