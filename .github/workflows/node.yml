@@ -50,6 +50,7 @@ jobs:
       - run: node -v
       - run: yarn -v
       - run: yarn build --skip-nx-cache --verbose
+      - run: yarn build
       - run: yarn test
       - run: yarn lint
   build:
