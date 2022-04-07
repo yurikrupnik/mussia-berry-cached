@@ -37,14 +37,14 @@ jobs:
           node-version: '16'
 
       - run: yarn -v
-      - run: npx nx-cloud start-ci-run
+      - run: yarn nx-cloud start-ci-run
       - run: yarn test
       - run: yarn nx run-many --target=lint --parallel --max-parallel=4 --all
       - run: yarn lint
       - run: yarn build
 #      #      - run: yarn e2e -- --skip-nx-cache --verbose
       - name: Stop agents
-        run: npx nx-cloud stop-all-agents
+        run: yarn nx-cloud stop-all-agents
         if: ${{ always() }}
 
   agents:
@@ -91,5 +91,5 @@ jobs:
       #      - run: |-
       #          gcloud --quiet auth configure-docker
       - name: Start Nx Agent ${{ matrix.agent }}
-        run: npx nx-cloud start-agent
+        run: yarn nx-cloud start-agent
 #        run: which nx
