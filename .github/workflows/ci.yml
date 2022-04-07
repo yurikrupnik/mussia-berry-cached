@@ -42,12 +42,12 @@ jobs:
         with:
           node-version: '16'
       - run: yarn
-      - run: npx nx-cloud start-ci-run
+      - run: yarn nx-cloud start-ci-run
       - run: yarn nx affected --target=build --parallel --max-parallel=3 --prod
       - run: yarn nx affected --target=test --parallel --max-parallel=2
       - run: yarn nx affected --target=lint --parallel --max-parallel=2
 #      - run: yarn nx affected --target=e2e --parallel --max-parallel=2 --headless
-      - run: npx nx-cloud stop-all-agents
+      - run: yarn nx-cloud stop-all-agents
   agents:
     runs-on: ubuntu-latest
     name: Agent 1
@@ -64,4 +64,4 @@ jobs:
         with:
           node-version: '16'
       - name: Start Nx Agent ${{ matrix.agent }}
-        run: npx nx-cloud start-agent
+        run: yarn nx-cloud start-agent
