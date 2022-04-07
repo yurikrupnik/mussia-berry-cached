@@ -34,6 +34,24 @@ jobs:
 #      - run: echo //registry.npmjs.org/:_authToken=${NPM_TOKEN} > .npmrc
 #      - run: ls
 
+  all-cached:
+    runs-on: ubuntu-latest
+    #    strategy:
+    #      matrix:
+    #        node-version: [ 12.x, 14.x, 16.x, 17.x ]
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Use Node.js 16.x
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16
+      - run: node -v
+      - run: yarn -v
+      - run: yarn build
+      - run: yarn test
+      - run: yarn lint
   all:
     runs-on: ubuntu-latest
 #    strategy:
@@ -50,9 +68,8 @@ jobs:
       - run: node -v
       - run: yarn -v
       - run: yarn build --skip-nx-cache --verbose
-      - run: yarn build
-      - run: yarn test
-      - run: yarn lint
+      - run: yarn test --skip-nx-cache --verbose
+      - run: yarn lint --skip-nx-cache --verbose
   build:
     runs-on: ubuntu-latest
 #    needs: [ 'setup' ]
