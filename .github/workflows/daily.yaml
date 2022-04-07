@@ -38,11 +38,9 @@ jobs:
 
       - run: yarn -v
       - run: yarn nx-cloud start-ci-run
-      - run: yarn test
-#      - run: yarn nx run-many --target=lint --parallel --max-parallel=4 --all
-      - run: yarn lint
-#      - run: yarn build
-      - run: yarn nx --target=build --parallel --max-parallel=3 --prod
+      - run: yarn test -skip-nx-cache --verbose
+      - run: yarn lint -skip-nx-cache --verbose
+      - run: yarn build -skip-nx-cache --verbose
 #      #      - run: yarn e2e -- --skip-nx-cache --verbose
       - name: Stop agents
         run: yarn nx-cloud stop-all-agents
