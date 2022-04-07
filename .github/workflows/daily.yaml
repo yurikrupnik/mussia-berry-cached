@@ -41,7 +41,7 @@ jobs:
       - run: cat package.json
       - run: yarn test --skip-nx-cache --verbose
       - run: yarn lint --skip-nx-cache --verbose
-      - run: yarn build --skip-nx-cache --verbose
+      - run: yarn build --verbose
 #      #      - run: yarn e2e -- --skip-nx-cache --verbose
       - name: Stop agents
         run: yarn nx-cloud stop-all-agents
