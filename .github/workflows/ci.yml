@@ -41,7 +41,7 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: '16'
-
+      - run: yarn
       - run: npx nx-cloud start-ci-run
       - run: yarn nx affected --target=build --parallel --max-parallel=3 --prod
       - run: yarn nx affected --target=test --parallel --max-parallel=2
@@ -59,6 +59,7 @@ jobs:
       - uses: actions/checkout@v2
         with:
           fetch-depth: 0
+      - run: yarn
       - uses: actions/setup-node@v1
         with:
           node-version: '16'
