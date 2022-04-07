@@ -49,7 +49,7 @@ jobs:
           node-version: 16
       - run: node -v
       - run: yarn -v
-      - run: yarn build
+      - run: yarn build --skip-nx-cache --verbose
       - run: yarn test
       - run: yarn lint
   build:
