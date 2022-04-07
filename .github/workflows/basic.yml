@@ -25,6 +25,6 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-      - run: yarn nx run-many --parallel --all --target=test
-      - run: yarn nx run-many --parallel --all --target=build
-      - run: yarn nx run-many --parallel --all --target=lint
+      - run: yarn test
+      - run: yarn build
+      - run: yarn lint
