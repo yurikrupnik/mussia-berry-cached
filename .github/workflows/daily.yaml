@@ -36,50 +36,15 @@ jobs:
         with:
           node-version: '16'
 
-      #          Start yarn cache
-      #      - name: Use Yarn cache
-      #        uses: actions/cache@v2
-      #        id: yarn-cache
-      #        with:
-      #          path: ".yarn/cache"
-      #          key: ${{ runner.os }}-yarn-${{ matrix.node-version }}-${{ hashFiles('**/yarn.lock') }}
-      #          End yarn cache
-#      - name: Get Yarn cache directory
-#        id: yarn-cache-dir-path
-#        run: echo "::set-output name=dir::$(yarn config get cacheFolder)" # v1 yarn cache dir
-#
-#      - name: Use Yarn cache
-#        uses: actions/cache@v2
-#        id: yarn-cache
-#        with:
-#          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-#          key: ${{ runner.os }}-yarn-${{ matrix.node-version }}-${{ hashFiles('**/yarn.lock') }}
       - run: yarn -v
-#      - run: yarn install
-
-      #      - name: Cache pnpm modules
-      #        uses: actions/cache@v2
-      #        with:
-      #          path: "**/node_nodules"
-      #          key: ${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
-      #          restore-keys: |
-      #            ${{ runner.os }}-
-      #      - uses: pnpm/action-setup@v2.1.0
-      #        with:
-      #          version: 6.11.0
-      #          run_install: true
-      #      - run: git config --global user.email krupnik.yuri@gmail.com && git config --global user.name yurikrupnik
-      #      - run: echo //registry.npmjs.org/:_authToken=${NPM_TOKEN} > .npmrc
-#      - run: yarn add dotenv
-#      - run: which nx
-      - run: yarn nx-cloud start-ci-run
+      - run: npx nx-cloud start-ci-run
       - run: yarn test
       - run: yarn nx run-many --target=lint --parallel --max-parallel=4 --all
       - run: yarn lint
       - run: yarn build
 #      #      - run: yarn e2e -- --skip-nx-cache --verbose
       - name: Stop agents
-        run: yarn nx-cloud stop-all-agents
+        run: npx nx-cloud stop-all-agents
         if: ${{ always() }}
 
   agents:
@@ -126,5 +91,5 @@ jobs:
       #      - run: |-
       #          gcloud --quiet auth configure-docker
       - name: Start Nx Agent ${{ matrix.agent }}
-        run: yarn nx-cloud start-agent
+        run: npx nx-cloud start-agent
 #        run: which nx
